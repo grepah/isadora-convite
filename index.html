@@ -1,144 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>15 Anos Isadora</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Anos Isadora</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #0d1b4c, #1a2a6c);
-      color: #f5d76e;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+/* --- BODY E FUNDO --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #0d1b4c, #1a2a6c);
+  color: #f5d76e;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
 
-    /* Fundo com brilhinhos */
-    body::before {
+/* Fundo animado */
+body::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: url("https://static.vecteezy.com/ti/vetor-gratis/p1/15396203-design-luxuoso-e-elegante-fundo-azul-marinho-de-luxo-com-glitter-dourado-vetor.jpg");
-  animation: stars 60s linear infinite;
+  background-size: cover;
   opacity: 0.5;
+  z-index: 0;
+  animation: stars 60s linear infinite;
 }
 
-    @keyframes stars {
-      from { background-position: 0 0; }
-      to { background-position: 10000px 10000px; }
-    }
+@keyframes stars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
 
-    header {
-      padding: 60px 20px 30px;
-      position: relative;
-      z-index: 1;
-    }
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5em;
-      margin: 0;
-      color: #f5d76e;
-      text-shadow: 0 0 12px rgba(255,215,0,0.6);
-    }
-    header p {
-      margin: 15px 0 0;
-      font-size: 1.3em;
-      font-style: italic;
-      color: #fff5cc;
-    }
+/* --- HEADER --- */
+header {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
-    /* Contador */
-    #contador {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      position: relative;
-      z-index: 1;
-    }
-    .tempo {
-      background: rgba(13, 27, 76, 0.7);
-      border: 2px solid #f5d76e;
-      border-radius: 12px;
-      padding: 15px 20px;
-      min-width: 80px;
-      box-shadow: 0 0 15px rgba(245, 215, 110, 0.3);
-    }
-    .tempo h2 {
-      margin: 0;
-      font-size: 2em;
-      color: #f5d76e;
-    }
-    .tempo span {
-      font-size: 0.9em;
-      color: #fff;
-    }
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5em;
+  margin: 0;
+  color: #f5d76e;
+  text-shadow: 0 0 12px rgba(255,215,0,0.6);
+}
 
-    .info {
-      margin: 50px auto;
-      max-width: 650px;
-      padding: 30px;
-      background: rgba(13, 27, 76, 0.7);
-      border-radius: 20px;
-      border: 2px solid #f5d76e;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-      position: relative;
-      z-index: 1;
-    }
-    .info h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #f5d76e;
-    }
-    .info p {
-      font-size: 1.2em;
-      margin: 10px 0;
-      color: #fff;
-    }
+header p {
+  margin: 0;
+  font-size: 1.1em;
+  font-style: italic;
+  color: #fff5cc;
+}
 
-    .btns {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .btns a {
-      background: #f5d76e;
-      color: #0d1b4c;
-      padding: 12px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1.1em;
-      font-weight: 600;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .btns a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-    }
+/* --- CONTADOR --- */
+#contador {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1;
+  flex-wrap: wrap;
+}
 
-    footer {
-      margin: 50px 0 20px;
-      font-size: 0.9em;
-      color: #fff5cc;
-      position: relative;
-      z-index: 1;
-    }
-  </style>
+.tempo {
+  background: rgba(13, 27, 76, 0.7);
+  border: 2px solid #f5d76e;
+  border-radius: 12px;
+  padding: 8px 12px;
+  min-width: 60px;
+  box-shadow: 0 0 10px rgba(245, 215, 110, 0.3);
+}
+
+.tempo h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #f5d76e;
+}
+
+.tempo span {
+  font-size: 0.8em;
+  color: #fff;
+}
+
+/* --- SEÇÃO INFO --- */
+.info {
+  z-index: 1;
+  max-width: 90%;
+  background: rgba(13, 27, 76, 0.7);
+  border-radius: 15px;
+  border: 2px solid #f5d76e;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 0 15px rgba(245, 215, 110, 0.3);
+}
+
+.info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #f5d76e;
+}
+
+.info p {
+  font-size: 1em;
+  margin: 5px 0;
+  color: #fff;
+}
+
+/* --- BOTÕES --- */
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btns a {
+  background: #f5d76e;
+  color: #0d1b4c;
+  padding: 8px 14px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btns a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+}
+
+/* --- RODAPÉ --- */
+footer {
+  font-size: 0.8em;
+  color: #fff5cc;
+  z-index: 1;
+  margin-top: auto;
+  padding: 5px 10px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 480px) {
+  header h1 { font-size: 2em; }
+  header p { font-size: 0.9em; }
+  .tempo h2 { font-size: 1.2em; }
+  .tempo { padding: 5px 8px; min-width: 50px; }
+  .info h2 { font-size: 1.2em; }
+  .info p { font-size: 0.9em; }
+  .btns a { font-size: 0.8em; padding: 6px 12px; }
+}
+</style>
 </head>
 <body>
   <header>
     <h1>15 Anos Isadora</h1>
     <p>“Este é o dia que o Senhor fez; regozijemo-nos e alegremo-nos nele.” (Salmos 118:24)</p>
 
-    <!-- Contador -->
     <div id="contador">
       <div class="tempo"><h2 id="dias">0</h2><span>Dias</span></div>
       <div class="tempo"><h2 id="horas">0</h2><span>Horas</span></div>
@@ -152,8 +185,8 @@
     <p><strong>Data:</strong> 23/01</p>
     <p><strong>Horário:</strong> 21h até 4h</p>
     <div class="btns">
-      <a href="https://wa.me/5551993223902" target="_blank">Confirmar Presença</a>
-      <a href="https://maps.app.goo.gl/YbAJr3sXhotr2sFw5" target="_blank">Como Chegar</a>
+      <a href="https://wa.me/5551993223902" target="_blank" img="https://img.cdndsgni.com/preview/10000404.jpg" >Confirmar Presença</a>
+      <a href="https://maps.app.goo.gl/YbAJr3sXhotr2sFw5" img="https://cdn-icons-png.flaticon.com/256/2642/2642502.png" target="_blank">Como Chegar</a>
     </div>
   </section>
 
@@ -162,26 +195,20 @@
   </footer>
 
   <script>
-    // Definir data alvo
     const dataEvento = new Date("January 23, 2026 21:00:00").getTime();
-
     const atualizarContador = () => {
       const agora = new Date().getTime();
       const distancia = dataEvento - agora;
-
-      if (distancia < 0) return;
-
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
+      if(distancia < 0) return;
+      const dias = Math.floor(distancia / (1000*60*60*24));
+      const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
+      const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
+      const segundos = Math.floor((distancia % (1000*60)) / 1000);
       document.getElementById("dias").textContent = dias;
       document.getElementById("horas").textContent = horas;
       document.getElementById("minutos").textContent = minutos;
       document.getElementById("segundos").textContent = segundos;
     };
-
     setInterval(atualizarContador, 1000);
   </script>
 </body>
