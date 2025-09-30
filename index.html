@@ -155,6 +155,81 @@ header p {
   vertical-align: middle;
 }
 
+/* Botão da Lista de Presentes */
+#lista-btn {
+  margin-top: 10px;
+  cursor: pointer;
+  background: #f5d76e;
+  color: #0d1b4c;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#lista-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+}
+
+/* --- MODAL LISTA DE PRESENTES --- */
+#lista-modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(255,223,0,0.95);
+  padding: 20px 25px;
+  border-radius: 15px;
+  border: 3px solid #B8860B;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  text-align: left;
+  color: #3e2f0b;
+  position: relative;
+  transform: scale(0.7);
+  animation: zoomIn 0.5s ease forwards;
+}
+
+.modal-content h2 {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  margin-bottom: 12px;
+}
+
+.modal-content ul {
+  padding-left: 20px;
+}
+
+.modal-content li {
+  margin-bottom: 8px;
+}
+
+.modal-content .fechar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  color: #3e2f0b;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity:0; }
+  to { transform: scale(1); opacity:1; }
+}
+
 /* --- RODAPÉ --- */
 footer {
   font-size: 0.8em;
@@ -194,24 +269,43 @@ footer {
     <p><strong>Data:</strong> 23/01</p>
     <p><strong>Horário:</strong> 21h até 4h</p>
     <div class="btns">
-      <!-- WhatsApp -->
       <a href="https://wa.me/5551993223902" target="_blank">
         <img src="https://img.cdndsgni.com/preview/10000404.jpg" alt="WhatsApp">
         Confirmar Presença
       </a>
-      <!-- Google Maps -->
       <a href="https://maps.app.goo.gl/YbAJr3sXhotr2sFw5" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/256/2642/2642502.png" alt="Maps">
         Como Chegar
       </a>
     </div>
+
+    <!-- Botão Lista de Presentes -->
+    <div id="lista-btn">Ver Lista de Presentes</div>
   </section>
 
+  <!-- Modal Lista de Presentes -->
+  <div id="lista-modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Lista de Presentes</h2>
+      <ul>
+        <li>Livro de poesia</li>
+        <li>Flores decorativas</li>
+        <li>Perfume feminino</li>
+        <li>Bolsa elegante</li>
+        <li>Vouchers para experiências</li>
+        <li>Chocolate gourmet</li>
+        <li>Itens personalizados</li>
+      </ul>
+    </div>
+  </div>
+
   <footer>
-    ✨ Feito com carinho para a Isadora ✨
+    ✨ Conto com sua presença ✨
   </footer>
 
   <script>
+    // Contador
     const dataEvento = new Date("January 23, 2026 21:00:00").getTime();
     const atualizarContador = () => {
       const agora = new Date().getTime();
@@ -227,6 +321,15 @@ footer {
       document.getElementById("segundos").textContent = segundos;
     };
     setInterval(atualizarContador, 1000);
+
+    // Modal Lista de Presentes
+    const modal = document.getElementById("lista-modal");
+    const btn = document.getElementById("lista-btn");
+    const fechar = document.querySelector("#lista-modal .fechar");
+
+    btn.onclick = () => { modal.style.display = "flex"; }
+    fechar.onclick = () => { modal.style.display = "none"; }
+    window.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; }
   </script>
 </body>
 </html>
