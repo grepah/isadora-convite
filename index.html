@@ -139,11 +139,20 @@ header p {
   font-weight: 600;
   box-shadow: 0 3px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
 }
 
 .btns a:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+}
+
+.btns img {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 /* --- RODAPÉ --- */
@@ -185,8 +194,16 @@ footer {
     <p><strong>Data:</strong> 23/01</p>
     <p><strong>Horário:</strong> 21h até 4h</p>
     <div class="btns">
-      <a href="https://wa.me/5551993223902" target="_blank" img src="https://img.cdndsgni.com/preview/10000404.jpg" alt="Whats">Confirmar Presença</a>
-      <a href="https://maps.app.goo.gl/YbAJr3sXhotr2sFw5" img src="https://cdn-icons-png.flaticon.com/256/2642/2642502.png" alt="Maps" target="_blank">Como Chegar</a>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5551993223902" target="_blank">
+        <img src="https://img.cdndsgni.com/preview/10000404.jpg" alt="WhatsApp">
+        Confirmar Presença
+      </a>
+      <!-- Google Maps -->
+      <a href="https://maps.app.goo.gl/YbAJr3sXhotr2sFw5" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/256/2642/2642502.png" alt="Maps">
+        Como Chegar
+      </a>
     </div>
   </section>
 
