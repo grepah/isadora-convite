@@ -1,5 +1,3 @@
-TESTE 02 -
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,7 +7,6 @@ TESTE 02 -
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
 
-    /* --- BODY E FUNDO ANIMADO --- */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -17,174 +14,122 @@ TESTE 02 -
       color: #f5d76e;
       text-align: center;
       position: relative;
-      overflow-x: hidden;
-      min-height: 100vh;
+      overflow: hidden;
     }
 
+    /* Fundo com brilhinhos */
     body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url("https://static.vecteezy.com/ti/vetor-gratis/p1/15396203-design-luxuoso-e-elegante-fundo-azul-marinho-de-luxo-com-glitter-dourado-vetor.jpg") repeat;
-      animation: stars 60s linear infinite;
-      opacity: 0.5;
-      z-index: 0;
-      pointer-events: none;
-    }
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("https://static.vecteezy.com/ti/vetor-gratis/p1/15396203-design-luxuoso-e-elegante-fundo-azul-marinho-de-luxo-com-glitter-dourado-vetor.jpg");
+  animation: stars 60s linear infinite;
+  opacity: 0.5;
+}
 
     @keyframes stars {
       from { background-position: 0 0; }
       to { background-position: 10000px 10000px; }
     }
 
-    /* --- HEADER --- */
     header {
-      padding: 40px 20px 20px;
+      padding: 60px 20px 30px;
       position: relative;
       z-index: 1;
     }
-
     header h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3em;
-      margin: 0 auto 15px;
+      font-size: 3.5em;
+      margin: 0;
       color: #f5d76e;
-      text-shadow: 0 0 12px rgba(255,215,0,0.8);
-      background: rgba(13, 27, 76, 0.92);
-      padding: 15px 25px;
-      border-radius: 15px;
-      border: 3px solid #f5d76e;
-      display: inline-block;
-      box-shadow: 0 0 25px rgba(245, 215, 110, 0.6);
+      text-shadow: 0 0 12px rgba(255,215,0,0.6);
     }
-
     header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
+      margin: 15px 0 0;
+      font-size: 1.3em;
       font-style: italic;
       color: #fff5cc;
-      background: rgba(13, 27, 76, 0.7);
-      padding: 10px 20px;
-      border-radius: 12px;
-      display: inline-block;
-      box-shadow: 0 0 15px rgba(245, 215, 110, 0.3);
     }
 
-    /* --- CONTADOR --- */
+    /* Contador */
     #contador {
-      margin: 20px auto 0;
+      margin-top: 30px;
       display: flex;
       justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      background: rgba(13, 27, 76, 0.92);
-      padding: 15px;
-      border-radius: 15px;
-      border: 3px solid #f5d76e;
-      box-shadow: 0 0 25px rgba(245, 215, 110, 0.6);
+      gap: 20px;
       position: relative;
       z-index: 1;
-      max-width: 90%;
     }
-
     .tempo {
-      padding: 10px 15px;
       background: rgba(13, 27, 76, 0.7);
-      border-radius: 12px;
       border: 2px solid #f5d76e;
-      min-width: 60px;
+      border-radius: 12px;
+      padding: 15px 20px;
+      min-width: 80px;
       box-shadow: 0 0 15px rgba(245, 215, 110, 0.3);
     }
-
     .tempo h2 {
       margin: 0;
-      font-size: 1.5em;
+      font-size: 2em;
       color: #f5d76e;
     }
-
     .tempo span {
       font-size: 0.9em;
       color: #fff;
     }
 
-    /* --- SEÇÃO INFO --- */
     .info {
-      margin: 30px auto;
-      width: 90%;
-      max-width: 500px;
-      padding: 25px;
-      background: rgba(13, 27, 76, 0.92);
+      margin: 50px auto;
+      max-width: 650px;
+      padding: 30px;
+      background: rgba(13, 27, 76, 0.7);
       border-radius: 20px;
-      border: 3px solid #f5d76e;
-      box-shadow: 0 0 25px rgba(245, 215, 110, 0.6);
+      border: 2px solid #f5d76e;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
       position: relative;
       z-index: 1;
     }
-
     .info h2 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
+      font-size: 2em;
+      margin-bottom: 20px;
       color: #f5d76e;
     }
-
     .info p {
-      font-size: 1em;
-      margin: 8px 0;
+      font-size: 1.2em;
+      margin: 10px 0;
       color: #fff;
     }
 
-    /* --- BOTÕES --- */
     .btns {
-      margin-top: 20px;
+      margin-top: 30px;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
     }
-
     .btns a {
       background: #f5d76e;
       color: #0d1b4c;
-      padding: 10px 18px;
-      border-radius: 25px;
+      padding: 12px 22px;
+      border-radius: 30px;
       text-decoration: none;
-      font-size: 1em;
+      font-size: 1.1em;
       font-weight: 600;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-
     .btns a:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0,0,0,0.5);
     }
 
-    /* --- RODAPÉ --- */
     footer {
-      margin: 30px 0 20px;
+      margin: 50px 0 20px;
       font-size: 0.9em;
       color: #fff5cc;
       position: relative;
       z-index: 1;
-      background: rgba(13, 27, 76, 0.92);
-      padding: 10px 20px;
-      border-radius: 12px;
-      border: 2px solid #f5d76e;
-      display: inline-block;
-      box-shadow: 0 0 20px rgba(245, 215, 110, 0.6);
-    }
-
-    /* --- RESPONSIVIDADE --- */
-    @media (max-width: 480px) {
-      header h1 { font-size: 2em; padding: 10px 15px; }
-      header p { font-size: 1em; padding: 6px 12px; }
-      .tempo h2 { font-size: 1.2em; }
-      .tempo { min-width: 50px; padding: 6px 10px; }
-      .info { width: 95%; padding: 15px; }
-      .btns a { font-size: 0.95em; padding: 8px 12px; }
-      footer { font-size: 0.8em; padding: 6px 12px; }
-      #contador { gap: 8px; padding: 10px; }
     }
   </style>
 </head>
@@ -207,7 +152,7 @@ TESTE 02 -
     <p><strong>Data:</strong> 23/01</p>
     <p><strong>Horário:</strong> 21h até 4h</p>
     <div class="btns">
-      <a href="https://wa.me/5551993223902" target="_blank">Confirmar Presença</a>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank">Confirmar Presença</a>
       <a href="https://maps.app.goo.gl/YbAJr3sXhotr2sFw5" target="_blank">Como Chegar</a>
     </div>
   </section>
@@ -217,6 +162,7 @@ TESTE 02 -
   </footer>
 
   <script>
+    // Definir data alvo
     const dataEvento = new Date("January 23, 2026 21:00:00").getTime();
 
     const atualizarContador = () => {
